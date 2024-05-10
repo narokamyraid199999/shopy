@@ -6,7 +6,7 @@
       <app-path></app-path>
 
       <!-- product container -->
-      <div class="grid grid-cols-2 gap-x-28 mt-3">
+      <div class="grid grid-cols-2 gap-x-24 mt-3">
         <!-- product section -->
         <div class="flex gap-x-2">
           <!-- other image -->
@@ -59,6 +59,29 @@
           </div>
 
           <!-- price -->
+          <div class="flex items-center gap-x-2">
+            <p *ngIf="product.discount" class="line-through">
+              {{ product.discount | currency }}
+            </p>
+            <p class="teachers-regular text-2xl my-4">
+              {{ product.price | currency }}
+            </p>
+          </div>
+
+          <!-- add to cart -->
+          <div class="grid grid-cols-2 gap-x-4">
+            <p-button
+              styleClass="rounded-sm w-full text-black   border-black py-3 px-6 font-light text-sm mt-8  bg-transparent text-black"
+              label="Add To Cart"
+            ></p-button>
+            <p-button
+              styleClass="rounded-sm w-full text-black   border-black py-3 px-6 font-light text-white text-sm mt-8  bg-blue-500 "
+              label="Buy Now"
+            ></p-button>
+          </div>
+
+          <!-- tag part -->
+          <div></div>
         </div>
       </div>
     </div>
