@@ -9,31 +9,8 @@ import { ProductService } from 'src/app/shared/core/services/product.service';
   templateUrl: './wishlist.component.html',
   styleUrls: ['./wishlist.component.css'],
 })
-export class WishlistComponent implements OnInit {
-  constructor(
-    private _productService: ProductService,
-    private _activeRoute: ActivatedRoute
-  ) {}
+export class WishlistComponent {
+  constructor(private _productService: ProductService) {}
 
-  items: MenuItem[] = [];
-
-  home: MenuItem | undefined;
-
-  paths: string[] = [];
-
-  ngOnInit() {
-    window.scrollTo(0, 0);
-    this._activeRoute.parent?.url.subscribe((data) => {
-      console.log('parent ', data[0].path);
-      this.paths?.push(data[0].path);
-      this._activeRoute.url.subscribe((data) => {
-        this.paths?.push(data[0].path);
-      });
-    });
-    this.items = [{ icon: 'pi pi-home', routerLink: '/home' }];
-    this.paths.forEach((path) => {
-      this.items.push({ label: path });
-    });
-  }
   products: productDetails[] = [];
 }

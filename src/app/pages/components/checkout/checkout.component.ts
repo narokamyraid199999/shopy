@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { MenuItem } from 'primeng/api';
 import { productDetails } from 'src/app/shared/core/interfaces/product-details';
 import { CartService } from 'src/app/shared/core/services/cart.service';
 import { ProductService } from 'src/app/shared/core/services/product.service';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css'],
+  selector: 'app-checkout',
+  templateUrl: './checkout.component.html',
+  styleUrls: ['./checkout.component.css'],
 })
-export class CartComponent implements OnInit {
+export class CheckoutComponent implements OnInit {
   constructor(
     private _productService: ProductService,
     private _cartService: CartService
@@ -48,8 +46,4 @@ export class CartComponent implements OnInit {
   }
 
   products: productDetails[] = [];
-
-  clearCart() {
-    this._cartService.clearCart();
-  }
 }

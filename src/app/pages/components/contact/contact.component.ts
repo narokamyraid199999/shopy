@@ -8,14 +8,8 @@ import { MenuItem } from 'primeng/api';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
 })
-export class ContactComponent implements OnInit {
-  constructor(private _activeRoute: ActivatedRoute) {}
-
-  items: MenuItem[] = [];
-
-  home: MenuItem | undefined;
-
-  paths: string[] = [];
+export class ContactComponent {
+  constructor() {}
 
   name: string = '';
 
@@ -37,19 +31,4 @@ export class ContactComponent implements OnInit {
     ]),
     terms: new FormControl<string>('', [Validators.required]),
   });
-
-  ngOnInit() {
-    window.scrollTo(0, 0);
-    this._activeRoute.parent?.url.subscribe((data) => {
-      console.log('parent ', data[0].path);
-      this.paths?.push(data[0].path);
-      this._activeRoute.url.subscribe((data) => {
-        this.paths?.push(data[0].path);
-      });
-    });
-    this.items = [{ icon: 'pi pi-home', routerLink: '/home' }];
-    this.paths.forEach((path) => {
-      this.items.push({ label: path });
-    });
-  }
 }

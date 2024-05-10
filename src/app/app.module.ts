@@ -21,6 +21,7 @@ import { ProductCardComponent } from './home/components/product-card/product-car
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { BadgeModule } from 'primeng/badge';
 import { ScrollTopModule } from 'primeng/scrolltop';
+import { PathComponent } from './shared/path/path.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ScrollTopModule } from 'primeng/scrolltop';
     ScrollPanelModule,
     ScrollTopModule,
     BadgeModule,
+    PathComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [MessageService],

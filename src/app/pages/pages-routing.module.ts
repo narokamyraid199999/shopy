@@ -15,6 +15,7 @@ import { LoginComponent } from './components/auth/components/login/login.compone
 import { SignupComponent } from './components/auth/components/signup/signup.component';
 import { ForgetPasswordComponent } from './components/auth/components/forget-password/forget-password.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'coupons', component: CouponsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'blog', component: BlogComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: 'auth', redirectTo: 'auth/login', pathMatch: 'full' },
   {
     path: 'auth',

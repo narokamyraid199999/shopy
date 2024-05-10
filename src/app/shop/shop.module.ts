@@ -16,6 +16,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { ShopCattegoriesComponent } from './components/shop-cattegories/shop-cattegories.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { PathComponent } from '../shared/path/path.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     InputTextModule,
     FormsModule,
     TableModule,
+    PathComponent,
   ],
 })
 export class ShopModule {}

@@ -30,6 +30,9 @@ import { SignupComponent } from './components/auth/components/signup/signup.comp
 import { ForgetPasswordComponent } from './components/auth/components/forget-password/forget-password.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { MessageService } from 'primeng/api';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { PathComponent } from '../shared/path/path.component';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,7 @@ import { MessageService } from 'primeng/api';
     SignupComponent,
     ForgetPasswordComponent,
     BlogComponent,
+    CheckoutComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [MessageService],
@@ -66,6 +70,9 @@ import { MessageService } from 'primeng/api';
     DropdownModule,
     InputSwitchModule,
     InputTextareaModule,
+    PathComponent,
+    InputSwitchModule,
+    RadioButtonModule,
   ],
 })
 export class PagesModule {}

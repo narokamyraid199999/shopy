@@ -1,53 +1,17 @@
-<section>
+<section class="bg-gray-100 pt-28 w-full">
   <!-- cart cotainer -->
-  <div class="container mx-auto mt-24 px-[5%]">
-    <h2 class="capitalize teachers-regular text-4xl">Shopping Cart</h2>
+  <div class="container mx-auto px-[5%]">
+    <h2 class="capitalize teachers-regular text-5xl">Checkout</h2>
     <!-- path -->
     <app-path></app-path>
 
+    <!-- checkout container -->
     <!-- cart container -->
     <div
       *ngIf="products.length > 0"
-      class="grid gap-x-6 gap-y-16 lg:gap-y-0 grid-cols-4 mt-12"
+      class="grid gap-x-6 gap-y-16 lg:gap-y-0 grid-cols-5 mt-12"
     >
-      <div class="col-span-4 lg:col-span-3">
-        <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
-          <ng-template pTemplate="header">
-            <tr>
-              <th style="width: 30%">Product</th>
-              <th style="width: 25%">Price</th>
-              <th style="width: 25%">Quantity</th>
-              <th style="width: 15%"></th>
-            </tr>
-          </ng-template>
-          <ng-template pTemplate="body" let-product>
-            <tr>
-              <td>
-                <div class="flex items-center gap-x-4">
-                  <div class="bg-gray-100 inline-block w-4/12">
-                    <img [src]="product.img" alt="" />
-                  </div>
-                  <p class="font-medium">{{ product.title }}</p>
-                </div>
-              </td>
-              <td>
-                <p>{{ product.price | currency }}</p>
-              </td>
-              <td>
-                <p class="pl-4">{{ product.quantity }}</p>
-              </td>
-              <td>
-                <div
-                  class="flex gap-x-1 items-center hover:cursor-pointer transition-all duration-200 hover:text-red-500"
-                >
-                  <i class="fa-solid fa-xmark"></i>
-                  <span>Remove</span>
-                </div>
-              </td>
-            </tr>
-          </ng-template>
-        </p-table>
-
+      <div class="col-span-5 p-8 shadow-sm bg-white lg:col-span-3">
         <!-- discount container -->
         <div class="flex items-center justify-between mt-6">
           <!-- sidcount button -->
@@ -66,24 +30,27 @@
               ></p-button>
             </div>
           </div>
-
-          <!-- clear cart -->
-          <p-button
-            (onClick)="clearCart()"
-            styleClass="rounded-sm text-black   border-black py-3 px-6 font-light text-sm mt-8  bg-transparent text-black"
-            label="Clear Cart"
-          ></p-button>
         </div>
       </div>
 
       <!-- cart details -->
-      <div class="col-span-2 lg:col-span-1">
+      <div class="shadow-sm bg-white col-span-3 lg:col-span-2">
         <!-- subtotal start -->
         <div class="col-span-2 lg:col-span-1 shadow-2xl p-8">
+          <h2 class="teachers-regular text-3xl mb-2">Your Order</h2>
+
+          <!-- order total -->
+          <div class="flex items-center justify-between">
+            <p class="font-medium text-lg">Product</p>
+            <p class="font-medium">Total</p>
+          </div>
+          <hr class="w-full h-1 bg-gray-100 mb-4 mt-2" />
+
           <div class="flex items-center justify-between">
             <p class="font-medium text-lg">Subtotal</p>
             <p class="font-medium">{{ totalPrice | currency }}</p>
           </div>
+
           <hr class="w-full bg-gray-50 my-4 h-1" />
           <!-- shipping start -->
           <div>
@@ -140,26 +107,12 @@
           <!-- checkout button -->
           <a routerLink="/pages/checkout">
             <p-button
-              styleClass="rounded-sm w-full border-black py-3 px-10 font-light text-sm mt-8  bg-black text-white"
-              label="Proceed to checkout"
+              styleClass="rounded-sm w-full border-blue-500 py-4 px-10 font-light text-sm mt-8  bg-blue-500 text-white"
+              label="Place Order"
             ></p-button>
           </a>
         </div>
       </div>
-    </div>
-
-    <!-- cart empty -->
-    <div
-      *ngIf="products.length == 0"
-      class="flex flex-col items-center justify-center mt-28 teachers-regular text-3xl"
-    >
-      <h2>No Cart Items Found</h2>
-      <a routerLink="/home">
-        <p-button
-          styleClass="rounded-sm w-full border-black py-3 px-10 font-light text-sm my-8  bg-black text-white"
-          label="Continue Shopping"
-        ></p-button>
-      </a>
     </div>
   </div>
 </section>
