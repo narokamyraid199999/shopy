@@ -25,17 +25,36 @@ export class ProductDetailsComponent implements OnInit {
       this._productService.getAllProducts().subscribe((data) => {
         [this.product] = data.filter((prod) => prod.id === this.id);
         this.product ? (this.mainImg = this.product.img[0]) : undefined;
+        this.product
+          ? (this.descLen = this.product.description.length)
+          : undefined;
+
         console.log(this.product);
       });
     });
   }
 
+  shourClicked: boolean = false;
+
   id: number | undefined;
   product: productDescription | undefined;
 
   mainImg: string | undefined;
+  descLen: number = 0;
+
+  shourDesc: number = 18;
 
   changeMainImage(img: string) {
+    this.shourClicked = true;
     this.mainImg = img;
+  }
+
+  seeMore() {
+    this.shourClicked = true;
+    this.shourDesc = this.descLen;
+  }
+  seeLess() {
+    this.shourClicked = false;
+    this.shourDesc = 18;
   }
 }

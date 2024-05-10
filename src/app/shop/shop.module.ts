@@ -17,6 +17,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { ShopCattegoriesComponent } from './components/shop-cattegories/shop-cattegories.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { PathComponent } from '../shared/path/path.component';
+import { FilterPipe } from './core/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PathComponent } from '../shared/path/path.component';
     CompairComponent,
     ShopCattegoriesComponent,
     ProductDetailsComponent,
+    FilterPipe,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [

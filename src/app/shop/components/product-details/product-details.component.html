@@ -6,7 +6,7 @@
       <app-path></app-path>
 
       <!-- product container -->
-      <div class="grid grid-cols-2 gap-x-10 mt-3">
+      <div class="grid grid-cols-2 gap-x-28 mt-3">
         <!-- product section -->
         <div class="flex gap-x-2">
           <!-- other image -->
@@ -32,10 +32,33 @@
 
         <!-- description section -->
         <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque omnis
-          animi itaque molestiae saepe repellat beatae, dolores odio nulla
-          quisquam eos illo maiores soluta delectus ducimus, iste suscipit quam
-          nesciunt.
+          <p class="capitalize text-gray-500">{{ product.category }}</p>
+          <h2 class="teachers-regular text-4xl">{{ product.title }}</h2>
+          <!-- in stock  -->
+          <div class="flex items-center gap-x-3 my-4">
+            <p class="bg-blue-300 px-3 py-1">in-Stock</p>
+            <p>({{ product.reviews }} Reviews)</p>
+          </div>
+          <!-- product description -->
+          <div>
+            <p>
+              {{ product.description | filter : shourDesc }}
+              <a
+                *ngIf="!shourClicked"
+                (click)="seeMore()"
+                class="text-blue-500 pl-2 hover:cursor-pointer"
+                >See More</a
+              >
+              <a
+                *ngIf="shourClicked"
+                (click)="seeLess()"
+                class="text-blue-500 pl-2 hover:cursor-pointer"
+                >See Less</a
+              >
+            </p>
+          </div>
+
+          <!-- price -->
         </div>
       </div>
     </div>
