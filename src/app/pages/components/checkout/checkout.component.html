@@ -1,3 +1,5 @@
+<p-toast></p-toast>
+
 <section class="bg-gray-100 pt-28 w-full">
   <!-- cart cotainer -->
   <div class="container mx-auto px-[5%]">
@@ -9,32 +11,156 @@
     <!-- cart container -->
     <div
       *ngIf="products.length > 0"
-      class="grid gap-x-6 gap-y-16 lg:gap-y-0 grid-cols-5 mt-12"
+      class="grid gap-x-6 gap-y-16 lg:gap-y-0 grid-cols-5 mt-10"
     >
-      <div class="col-span-5 p-8 shadow-sm bg-white lg:col-span-3">
-        <!-- discount container -->
-        <div class="flex items-center justify-between mt-6">
-          <!-- sidcount button -->
-          <div>
-            <p class="mb-1">Coupon Code:</p>
-            <div class="flex -mt-6 gap-x-1 items-end">
-              <input
-                class="h-14 rounded-none pl-4 w-[17rem]"
-                placeholder="Enter Copuon code"
-                pInputText="text"
-              />
-              <!-- apply button -->
-              <p-button
-                styleClass="rounded-sm border-black py-4 px-8 font-light text-sm mt-8  bg-black text-white"
-                label="Apply"
-              ></p-button>
+      <div class="shadow-sm bg-white col-span-5 p-8 lg:col-span-3">
+        <div>
+          <!-- billing header -->
+          <h2 class="teachers-regular text-3xl mb-12">Billing Details</h2>
+          <!-- discount container -->
+          <form [formGroup]="billingForm">
+            <div>
+              <!-- name root -->
+              <div class="grid gap-x-6 grid-cols-2">
+                <!-- fname -->
+                <div>
+                  <p class="mb-1 text-sm font-medium">
+                    First Name <span class="text-red-500">*</span>
+                  </p>
+                  <input
+                    class="h-14 w-full rounded-none pl-4"
+                    placeholder="Enter Copuon code"
+                    pInputText="text"
+                  />
+                </div>
+                <!-- lname -->
+                <div>
+                  <p class="mb-1 text-sm font-medium">
+                    First Name <span class="text-red-500">*</span>
+                  </p>
+                  <input
+                    class="h-14 rounded-none pl-4 w-full"
+                    placeholder="Enter Copuon code"
+                    pInputText="text"
+                  />
+                </div>
+                <!-- apply button -->
+              </div>
+
+              <!-- company -->
+              <div class="my-6">
+                <p class="mb-1 text-sm font-medium">Company name (optional)</p>
+                <input
+                  class="h-14 w-full rounded-none pl-4"
+                  placeholder="Example LTD."
+                  pInputText="text"
+                />
+              </div>
+
+              <!-- Country / Region -->
+              <div class="my-6">
+                <p class="mb-1 text-sm font-medium">Country / Region</p>
+                <input
+                  class="h-14 w-full rounded-none pl-4"
+                  placeholder="United States (US)"
+                  pInputText="text"
+                />
+              </div>
+
+              <!-- street address -->
+              <div class="my-6">
+                <p class="mb-1 text-sm font-medium">street address</p>
+                <input
+                  class="h-14 w-full rounded-none pl-4"
+                  placeholder="House number and street name"
+                  pInputText="text"
+                />
+                <input
+                  class="h-14 w-full rounded-none pl-4 mt-5"
+                  placeholder="Appartment number and street name"
+                  pInputText="text"
+                />
+              </div>
+
+              <!-- Town / City -->
+              <div class="my-6">
+                <p class="mb-1 text-sm font-medium">Town / City</p>
+                <input
+                  class="h-14 w-full rounded-none pl-4"
+                  placeholder="City"
+                  pInputText="text"
+                />
+              </div>
+
+              <!-- country dropdown -->
+              <div class="grid gap-x-6 grid-cols-2">
+                <!-- fname -->
+                <div>
+                  <p class="mb-1 text-sm font-medium">State / County</p>
+                  <!-- gender -->
+                  <p-dropdown
+                    styleClass="w-full h-16"
+                    [options]="gender"
+                    optionLabel="name"
+                    placeholder="Select country"
+                  />
+                </div>
+                <!-- lname -->
+                <div>
+                  <p class="mb-1 text-sm font-medium">Postcode ZIP</p>
+                  <input
+                    class="h-14 rounded-none pl-4 w-full"
+                    placeholder="zip code"
+                    pInputText="text"
+                  />
+                </div>
+                <!-- apply button -->
+              </div>
+
+              <!-- phone -->
+              <div class="my-6">
+                <p class="mb-1 text-sm font-medium">
+                  Phone <span class="text-red-500">*</span>
+                </p>
+                <input
+                  class="h-14 w-full rounded-none pl-4"
+                  placeholder="Phone"
+                  pInputText="text"
+                />
+              </div>
+
+              <!-- email -->
+              <div class="my-6">
+                <p class="mb-1 text-sm font-medium">
+                  Email address <span class="text-red-500">*</span>
+                </p>
+                <input
+                  class="h-14 w-full rounded-none pl-4"
+                  placeholder="Email"
+                  pInputText="text"
+                />
+              </div>
+
+              <!-- Order notes (optional) -->
+              <div class="my-6">
+                <p class="mb-1 text-sm font-medium">Order notes (optional)</p>
+
+                <textarea
+                  class="w-full"
+                  rows="7"
+                  cols="30"
+                  pInputTextarea
+                ></textarea>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
 
-      <!-- cart details -->
+      <!-- details root -->
       <div class="shadow-sm bg-white col-span-3 lg:col-span-2">
+        <!-- cart details -->
+
         <!-- subtotal start -->
         <div class="col-span-2 lg:col-span-1 shadow-2xl p-8">
           <h2 class="teachers-regular text-3xl mb-2">Your Order</h2>
@@ -107,6 +233,7 @@
           <!-- checkout button -->
           <a routerLink="/pages/checkout">
             <p-button
+              (click)="placeOrder()"
               styleClass="rounded-sm w-full border-blue-500 py-4 px-10 font-light text-sm mt-8  bg-blue-500 text-white"
               label="Place Order"
             ></p-button>

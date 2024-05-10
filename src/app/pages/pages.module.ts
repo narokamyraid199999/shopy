@@ -33,6 +33,7 @@ import { MessageService } from 'primeng/api';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { PathComponent } from '../shared/path/path.component';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     PathComponent,
     InputSwitchModule,
     RadioButtonModule,
+    ToastModule,
   ],
 })
 export class PagesModule {}

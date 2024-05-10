@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-interface City {
+export interface City {
   name: string;
   code: string;
 }

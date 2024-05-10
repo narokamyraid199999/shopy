@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { RatingModule } from 'primeng/rating';
 import { productDetails } from 'src/app/shared/core/interfaces/product-details';
 import { Router } from '@angular/router';
+import { WishlistService } from 'src/app/shared/core/services/wishlist.service';
 
 @Component({
   selector: 'app-product-card',
@@ -28,7 +29,8 @@ export class ProductCardComponent {
     private _messageService: MessageService,
     private _productService: ProductService,
     private _cartService: CartService,
-    private _Router: Router
+    private _Router: Router,
+    private _wishlistService: WishlistService
   ) {}
 
   @Input()
@@ -51,6 +53,7 @@ export class ProductCardComponent {
   }
 
   addToWishlist(prod: productDetails | undefined) {
+    this._wishlistService.updateLocalStorage(prod);
     this._messageService.add({
       severity: 'info',
       detail: `${prod?.title} Added to wishlist`,

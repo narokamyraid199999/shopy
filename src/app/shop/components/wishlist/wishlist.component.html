@@ -6,6 +6,73 @@
     <!-- wishlist path -->
     <app-path></app-path>
 
+    <div *ngIf="products.length > 0">
+      <!-- cart container -->
+      <div *ngIf="products.length > 0" class="mt-12">
+        <div>
+          <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+              <tr>
+                <th style="width: 30%">Product</th>
+                <th style="width: 25%">Price</th>
+                <th style="width: 25%">Quantity</th>
+                <th style="width: 15%"></th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-x-4">
+                    <div class="bg-gray-100 inline-block w-4/12">
+                      <img [src]="product.img" alt="" />
+                    </div>
+                    <p class="font-medium">{{ product.title }}</p>
+                  </div>
+                </td>
+                <td>
+                  <p>{{ product.price | currency }}</p>
+                </td>
+                <td>
+                  <p class="pl-4">{{ product.quantity }}</p>
+                </td>
+                <td>
+                  <div
+                    class="flex gap-x-1 items-center hover:cursor-pointer transition-all duration-200 hover:text-red-500"
+                  >
+                    <i class="fa-solid fa-xmark"></i>
+                    <span>Remove</span>
+                  </div>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+
+          <!-- discount container -->
+          <div class="flex items-center justify-between mt-3">
+            <!-- sidcount button -->
+            <div>
+              <div>
+                <!-- apply button -->
+                <a routerLink="/shop/cart">
+                  <p-button
+                    styleClass="rounded-sm text-black  border-black py-3 px-6 font-light text-sm mt-8  bg-black text-white"
+                    label="Go To Cart"
+                  ></p-button>
+                </a>
+              </div>
+            </div>
+
+            <!-- clear cart -->
+            <p-button
+              (onClick)="clearCart()"
+              styleClass="rounded-sm text-black   border-black py-3 px-6 font-light text-sm mt-8  bg-transparent text-black"
+              label="Clear Whshlist"
+            ></p-button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- wishlist grid -->
     <div
       *ngIf="products.length == 0"
