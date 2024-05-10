@@ -1,7 +1,8 @@
 export interface productDetails {
   id?: number;
+  description?: string;
   quantity: number;
-  img: string;
+  img: string | string[];
   category: string;
   title: string;
   reviews: number;

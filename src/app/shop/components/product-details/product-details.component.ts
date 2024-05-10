@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { productDescription } from 'src/app/shared/core/interfaces/product-details';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
+import {
+  productDescription,
+  productDetails,
+} from 'src/app/shared/core/interfaces/product-details';
+import { CartService } from 'src/app/shared/core/services/cart.service';
 import { ProductService } from 'src/app/shared/core/services/product.service';
 
 @Component({
@@ -11,7 +16,10 @@ import { ProductService } from 'src/app/shared/core/services/product.service';
 export class ProductDetailsComponent implements OnInit {
   constructor(
     private _productService: ProductService,
-    private _ActivateRouter: ActivatedRoute
+    private _ActivateRouter: ActivatedRoute,
+    private _cartService: CartService,
+    private _messageService: MessageService,
+    private _Router: Router
   ) {}
 
   ngOnInit(): void {
@@ -56,5 +64,20 @@ export class ProductDetailsComponent implements OnInit {
   seeLess() {
     this.shourClicked = false;
     this.shourDesc = 18;
+  }
+
+  butNow() {
+    this.addToCart();
+    setTimeout(() => {
+      this._Router.navigate(['/pages/checkout']);
+    }, 500);
+  }
+
+  addToCart() {
+    this._cartService.updateLocalStorage(this.product);
+    this._messageService.add({
+      severity: 'success',
+      detail: `${this.product?.title} Added to cart`,
+    });
   }
 }

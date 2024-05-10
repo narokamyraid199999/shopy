@@ -8,7 +8,7 @@
       <!-- product container -->
       <div class="grid grid-cols-2 gap-x-24 mt-3">
         <!-- product section -->
-        <div class="flex gap-x-2">
+        <div class="flex gap-x-3">
           <!-- other image -->
           <div class="flex gap-y-4 flex-col">
             <a *ngFor="let img of product.img" (click)="changeMainImage(img)">
@@ -18,14 +18,14 @@
                   'border-y-2': img == mainImg,
                   'border-x-2': img == mainImg
                 }"
-                class="w-[7rem] bg-gray-50 shadow-sm transition-all duration-100 hover:cursor-pointer hover:border-x-2 hover:border-y-2 hover:border-gray-400"
+                class="w-[7rem] bg-gray-100 shadow-sm transition-all duration-100 hover:cursor-pointer hover:border-x-2 hover:border-y-2 hover:border-gray-400"
                 [src]="img"
                 alt=""
               />
             </a>
           </div>
           <!-- main image -->
-          <div class="bg-gray-50">
+          <div class="bg-gray-100">
             <img [src]="mainImg" alt="" />
           </div>
         </div>
@@ -71,10 +71,12 @@
           <!-- add to cart -->
           <div class="grid grid-cols-2 gap-x-4">
             <p-button
+              (onClick)="addToCart()"
               styleClass="rounded-sm w-full text-black   border-black py-3 px-6 font-light text-sm mt-8  bg-transparent text-black"
               label="Add To Cart"
             ></p-button>
             <p-button
+              (onClick)="butNow()"
               styleClass="rounded-sm w-full text-black   border-black py-3 px-6 font-light text-white text-sm mt-8  bg-blue-500 "
               label="Buy Now"
             ></p-button>
@@ -87,6 +89,7 @@
           </div>
 
           <hr class="w-full bg-gray-100 h-1 mt-8" />
+
           <!-- share -->
           <div class="flex items-center gap-x-2 mt-6">
             <p>Share</p>
