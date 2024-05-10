@@ -1,0 +1,143 @@
+<!-- address -->
+<div>
+  <!-- address start -->
+  <div class="grid grid-cols-2 gap-y-16 gap-x-10">
+    <!-- first address -->
+    <div class="col-span-2 lg:col-span-1 flex items-start gap-x-5">
+      <div>
+        <i class="fa-regular text-blue-500 text-5xl fa-address-book"></i>
+      </div>
+      <div>
+        <h2 class="teachers-regular -mt-3 text-2xl mb-5 capitalize">
+          Billing Address
+        </h2>
+        <div class="flex flex-col gap-y-3 items-start">
+          <!-- street -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">Street: </span>
+              <span class="font-light">{{ billingAddress.Street }}</span>
+            </p>
+          </div>
+
+          <!-- city -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">City: </span>
+              <span class="font-light">{{ billingAddress.City }}</span>
+            </p>
+          </div>
+
+          <!-- State -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">State: </span>
+              <span class="font-light">{{ billingAddress.State }}</span>
+            </p>
+          </div>
+
+          <!-- phone -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">Phone number: </span>
+              <span class="font-light">{{ billingAddress.Phone }}</span>
+            </p>
+          </div>
+
+          <!-- zip -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">Zip code: </span>
+              <span class="font-light">{{ billingAddress.Zip }}</span>
+            </p>
+          </div>
+
+          <!-- Country calling -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">Country calling code: </span>
+              <span class="font-light">{{ billingAddress.callCode }}</span>
+            </p>
+          </div>
+
+          <!-- Country -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">Country: </span>
+              <span class="font-light">{{ billingAddress.Country }}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- second address -->
+    <div class="col-span-2 lg:col-span-1 flex items-start gap-x-5">
+      <div>
+        <i class="fa-solid text-blue-500 text-5xl fa-truck-moving"></i>
+      </div>
+      <div>
+        <h2 class="teachers-regular -mt-3 text-2xl mb-4 capitalize">
+          Shipping Address
+        </h2>
+        <div class="flex flex-col gap-y-3 items-start">
+          <!-- street -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">Street: </span>
+              <span class="font-light">{{ shippingAddress.Street }}</span>
+            </p>
+          </div>
+
+          <!-- city -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">City: </span>
+              <span class="font-light">{{ shippingAddress.City }}</span>
+            </p>
+          </div>
+
+          <!-- State -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">State: </span>
+              <span class="font-light">{{ shippingAddress.State }}</span>
+            </p>
+          </div>
+
+          <!-- phone -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">Phone number: </span>
+              <span class="font-light">{{ shippingAddress.Phone }}</span>
+            </p>
+          </div>
+
+          <!-- zip -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">Zip code: </span>
+              <span class="font-light">{{ shippingAddress.Zip }}</span>
+            </p>
+          </div>
+
+          <!-- Country calling -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">Country calling code: </span>
+              <span class="font-light">{{ shippingAddress.callCode }}</span>
+            </p>
+          </div>
+
+          <!-- Country -->
+          <div>
+            <p class="text-sm flex gap-x-2">
+              <span class="font-medium">Country: </span>
+              <span class="font-light">{{ billingAddress.Country }}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

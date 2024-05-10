@@ -1,0 +1,296 @@
+<section>
+  <!-- background image -->
+  <div class="background h-[25rem] w-full shadow-md">
+    <div
+      class="flex flex-col gap-y-3 items-center text-white justify-center h-full"
+    >
+      <h2 class="teachers-regular text-5xl">Our Blog</h2>
+
+      <!-- path start -->
+      <div class="mt-3 inline-block">
+        <p-breadcrumb class="max-w-full" [model]="items">
+          <ng-template pTemplate="item" let-item>
+            <ng-container *ngIf="item.route; else elseBlock">
+              <a [routerLink]="item.route" class="p-menuitem-link">
+                <span
+                  [ngClass]="[item.icon ? item.icon : '', 'text-color']"
+                ></span>
+                <span class="text-primary font-semibold">{{ item.label }}</span>
+              </a>
+            </ng-container>
+            <ng-template #elseBlock>
+              <a [href]="item.url">
+                <span class="text-color">{{ item.label }}</span>
+              </a>
+            </ng-template>
+          </ng-template>
+        </p-breadcrumb>
+      </div>
+    </div>
+  </div>
+
+  <!-- blog continaer -->
+  <div class="container mx-auto px-[5%] mt-32">
+    <!-- blog start -->
+    <div class="grid gap-y-16 lg:gap-y-0 gap-x-12 grid-cols-4">
+      <!-- blog image -->
+      <div class="col-span-4 lg:col-span-3">
+        <div>
+          <img
+            class="w-full"
+            src="https://shofy-angular.vercel.app/assets/img/blog/blog-big-3.jpg"
+            alt=""
+          />
+        </div>
+
+        <!-- date -->
+        <div class="flex items-center gap-x-6 mt-8 mb-3 text-sm">
+          <!-- data year -->
+          <div class="flex items-center gap-x-1">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>July 21, 2023</span>
+          </div>
+          <!-- data user -->
+          <div class="flex items-center gap-x-1">
+            <i class="fa-regular fa-user"></i>
+            <p>John Smith</p>
+          </div>
+
+          <!-- data comment -->
+          <div class="flex items-center gap-x-1">
+            <i class="fa-regular fa-comment"></i>
+            <p>2 Comments</p>
+          </div>
+        </div>
+
+        <!-- paragraphe start -->
+        <div>
+          <h2
+            class="text-4xl font-medium transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
+          >
+            How to Clean Your Home Faster and More Efficiently
+          </h2>
+          <p class="text-sm mt-3 leading-6">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat […]
+          </p>
+
+          <!-- read more button -->
+          <p-button
+            styleClass="rounded-sm border-black py-4 px-8 font-light text-sm mt-8  bg-black text-white"
+            label="Read More"
+          ></p-button>
+
+          <!-- wize man words -->
+          <div class="my-12 bg-[#0989FF] text-white p-12 shadow-sm">
+            <h2 class="teachers-regular text-2xl mb-3">
+              Only one thing is impossible for God: To find any sense in any
+              copyright law on the planet.
+            </h2>
+            <p class="teachers-regular text-lg">Shahnewaz Sakil</p>
+          </div>
+
+          <!-- blog 2 -->
+
+          <div>
+            <img
+              class="w-full"
+              src="https://shofy-angular.vercel.app/assets/img/blog/blog-big-5.jpg"
+              alt=""
+            />
+          </div>
+
+          <!-- date -->
+          <div class="flex items-center gap-x-6 mt-8 mb-3 text-sm">
+            <!-- data year -->
+            <div class="flex items-center gap-x-1">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span> January 20, 2023</span>
+            </div>
+            <!-- data user -->
+            <div class="flex items-center gap-x-1">
+              <i class="fa-regular fa-user"></i>
+              <p>Salim Rana</p>
+            </div>
+
+            <!-- data comment -->
+            <div class="flex items-center gap-x-1">
+              <i class="fa-regular fa-comment"></i>
+              <p>10 Comments</p>
+            </div>
+          </div>
+
+          <!-- paragraphe start -->
+          <div>
+            <h2
+              class="text-4xl font-medium transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
+            >
+              How to Clean Your Home Faster and More Efficiently
+            </h2>
+            <p class="text-sm mt-3 leading-6">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat […]
+            </p>
+
+            <!-- read more button -->
+            <p-button
+              styleClass="rounded-sm border-black py-4 px-8 font-light text-sm mt-8  bg-black text-white"
+              label="Read More"
+            ></p-button>
+
+            <!-- wize man words -->
+          </div>
+        </div>
+      </div>
+
+      <!-- about me -->
+      <div class="col-span-4 lg:col-span-1">
+        <!-- search Input -->
+        <div class="w-full mb-8 relative flex items-center">
+          <i class="fa-regular fa-envelope text-xl absolute left-4"></i>
+          <input
+            [(ngModel)]="search"
+            placeholder="Search ..."
+            class="h-16 w-full pl-12 rounded-sm"
+            pInputText
+            type="text"
+            name=""
+            id=""
+          />
+        </div>
+
+        <!-- About me -->
+        <div>
+          <!-- about header -->
+          <p class="teachers-regular font-3xl mb-5">About me</p>
+
+          <!-- abount profile -->
+          <div
+            class="flex flex-col items-center justify-center border-x-2 border-y-2 border-gray-100 py-10 px-12"
+          >
+            <!-- profile image -->
+            <img
+              class="rounded-full w-40 h-40"
+              src="https://shofy-angular.vercel.app/assets/img/users/user-11.jpg"
+              alt=""
+            />
+            <!-- profile header -->
+            <h2 class="mt-6 text-2xl font-medium">Ravi O'Leigh</h2>
+            <p class="text-sm text-gray-400 mb-3">Photographer & Blogger</p>
+            <p class="mb-3">
+              Lorem ligula eget dolor. Aenean massa. Cum sociis que penatibus
+              magnis dis parturient
+            </p>
+            <img
+              src="https://shofy-angular.vercel.app/assets/img/blog/signature/signature.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <!-- latest posts -->
+        <div>
+          <!-- about header -->
+          <p class="teachers-regular font-3xl mt-8 mb-3">Latest Posts</p>
+
+          <!-- abount profile -->
+          <div
+            class="flex flex-col lg:items-center lg:justify-center border-x-2 border-y-2 border-gray-100 px-3 py-7"
+          >
+            <!-- post1 -->
+            <div class="flex items-center gap-x-3">
+              <!-- post1 image -->
+              <div class="w-24">
+                <img
+                  src="https://shofy-angular.vercel.app/assets/img/blog/grid/blog-grid-6.jpg"
+                  alt=""
+                />
+              </div>
+              <!-- post1 text -->
+              <div>
+                <p>April 5, 2023</p>
+                <p
+                  class="font-medium text-sm transition-all duration-300 hover:cursor-pointer hover:text-blue-500"
+                >
+                  Freelancer Days 2022...
+                </p>
+              </div>
+            </div>
+            <hr class="w-full mt-8" />
+
+            <!-- post 2 -->
+            <div class="flex items-center gap-x-3 mt-7">
+              <!-- post1 image -->
+              <div class="w-24">
+                <img
+                  src="https://shofy-angular.vercel.app/assets/img/blog/grid/blog-grid-7.jpg"
+                  alt=""
+                />
+              </div>
+              <!-- post1 text -->
+              <div>
+                <p>May 12, 2023</p>
+                <p
+                  class="font-medium text-sm transition-all duration-300 hover:cursor-pointer hover:text-blue-500"
+                >
+                  Hiring the Right Sal...
+                </p>
+              </div>
+            </div>
+            <hr class="w-full mt-8" />
+
+            <!-- post 3 -->
+            <div class="flex items-center gap-x-3 mt-7">
+              <!-- post1 image -->
+              <div class="w-24">
+                <img
+                  src="https://shofy-angular.vercel.app/assets/img/blog/grid/blog-grid-8.jpg"
+                  alt=""
+                />
+              </div>
+              <!-- post1 text -->
+              <div>
+                <p>March 22, 2023</p>
+                <p
+                  class="font-medium text-sm transition-all duration-300 hover:cursor-pointer hover:text-blue-500"
+                >
+                  Quality Foods Requir...
+                </p>
+              </div>
+            </div>
+            <hr class="w-full mt-8" />
+          </div>
+        </div>
+
+        <!-- Categories -->
+        <div>
+          <!-- about header -->
+          <p class="teachers-regular font-3xl mt-8 mb-3">Categories</p>
+
+          <!-- abount profile -->
+          <div
+            class="flex flex-col border-x-2 border-y-2 border-gray-100 px-3 py-7"
+          >
+            <div>
+              <div
+                class="flex text-gray-600 hover:cursor-pointer hover:text-blue-500 transition-all duration-300 mb-2 justify-between items-center"
+                *ngFor="let elm of categories"
+              >
+                <p>{{ elm.title }}</p>
+                <span>{{ elm.num }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+<section>
+  <div class="container mx-auto px-[5%] mt-28">
+    <!-- header container -->
+    <div class="flex justify-center">
+      <div>
+        <!-- header -->
+        <h2 class="teachers-regular text-5xl">My account</h2>
+
+        <!-- path -->
+        <div class="mt-6 ml-8 inline-block">
+          <p-breadcrumb class="max-w-full" [model]="items">
+            <ng-template pTemplate="item" let-item>
+              <ng-container *ngIf="item.route; else elseBlock">
+                <a [routerLink]="item.route" class="p-menuitem-link">
+                  <span
+                    [ngClass]="[item.icon ? item.icon : '', 'text-color']"
+                  ></span>
+                  <span class="text-primary font-semibold">{{
+                    item.label
+                  }}</span>
+                </a>
+              </ng-container>
+              <ng-template #elseBlock>
+                <a [href]="item.url">
+                  <span class="text-color">{{ item.label }}</span>
+                </a>
+              </ng-template>
+            </ng-template>
+          </p-breadcrumb>
+        </div>
+      </div>
+    </div>
+
+    <!-- login router -->
+    <div
+      class="w-full md:w-3/4 lg:w-2/4 mx-auto shadow-lg shadow-gray-200 p-14"
+    >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>

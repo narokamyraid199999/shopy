@@ -1,0 +1,95 @@
+<div>
+  <!-- login header continer -->
+  <div class="flex justify-center">
+    <div>
+      <h3 class="font-medium text-3xl mb-2">Sign Up Shofy.</h3>
+      <p class="-ml-4 text-gray-500">
+        Already have an account?
+        <a class="text-blue-500" routerLink="/pages/auth/login">Sign In</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- social media login -->
+  <div class="grid gap-y-3 lg:gap-y-0 grid-cols-4 mt-8 gap-x-3">
+    <div
+      class="col-span-4 hover:border-gray-500 transition-all duration-200 hover:cursor-pointer flex justify-center lg:col-span-2 border-gray-200 border-x-2 border-y-2 py-4 px-8"
+    >
+      <div class="flex items-center gap-x-2">
+        <i class="fa-brands text-2xl text-red-500 fa-google"></i
+        ><span>Sign in with google</span>
+      </div>
+    </div>
+    <div
+      class="col-span-4 hover:border-gray-500 transition-all duration-200 hover:cursor-pointer flex justify-center lg:col-span-1 border-gray-100 border-x-2 border-y-2 py-4 px-8"
+    >
+      <i class="fa-brands text-2xl text-blue-500 fa-facebook"></i>
+    </div>
+    <div
+      class="col-span-4 hover:border-gray-500 transition-all duration-200 hover:cursor-pointer flex justify-center lg:col-span-1 border-gray-100 border-x-2 border-y-2 py-4 px-8"
+    >
+      <i class="fa-brands text-black text-2xl fa-apple"></i>
+    </div>
+  </div>
+
+  <hr class="w-full my-8" />
+
+  <!-- form start -->
+  <form [formGroup]="signUpForm">
+    <!-- name -->
+    <div class="w-full mb-8 relative flex items-center">
+      <i class="fa-regular fa-user text-xl absolute left-4"></i>
+      <input
+        formControlName="name"
+        placeholder="Jhon Sami"
+        class="h-16 w-full pl-12 rounded-sm"
+        pInputText
+        type="text"
+        name=""
+        id=""
+      />
+    </div>
+
+    <!-- email -->
+    <div class="w-full mb-8 relative flex items-center">
+      <i class="fa-regular fa-envelope text-xl absolute left-4"></i>
+      <input
+        formControlName="email"
+        placeholder="shophy@gmail.com"
+        class="h-16 w-full pl-12 rounded-sm"
+        pInputText
+        type="text"
+        name=""
+        id=""
+      />
+    </div>
+
+    <!-- email -->
+    <div class="col-span-2 md:col-span-1 relative flex items-center">
+      <i class="fa-solid fa-lock text-xl absolute left-4"></i>
+      <input
+        placeholder="Min. 6 char"
+        formControlName="password"
+        class="h-16 w-full pl-12 rounded-sm"
+        pInputText
+        type="text"
+        name=""
+        id=""
+      />
+    </div>
+
+    <!-- terms -->
+    <div class="flex items-center gap-x-2 mt-6">
+      <p-checkbox formControlName="terms" value="accept" inputId="terms" />
+      <label class="text-sm" for="terms"
+        >I accept the terms of the Service & Privacy Policy.</label
+      >
+    </div>
+
+    <!-- update -->
+    <p-button
+      styleClass="rounded-sm w-full border-black py-4 px-10 font-light text-sm mt-6  bg-black text-white"
+      label="Sign Up"
+    ></p-button>
+  </form>
+</div>

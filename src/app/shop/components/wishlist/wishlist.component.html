@@ -1,0 +1,41 @@
+<section>
+  <!-- wishlist container -->
+  <div class="container mx-auto px-[5%] mt-20">
+    <h2 class="text-4xl teachers-regular">Wishlist</h2>
+
+    <!-- wishlist path -->
+    <div class="mt-3 inline-block">
+      <p-breadcrumb class="max-w-full" [model]="items">
+        <ng-template pTemplate="item" let-item>
+          <ng-container *ngIf="item.route; else elseBlock">
+            <a [routerLink]="item.route" class="p-menuitem-link">
+              <span
+                [ngClass]="[item.icon ? item.icon : '', 'text-color']"
+              ></span>
+              <span class="text-primary font-semibold">{{ item.label }}</span>
+            </a>
+          </ng-container>
+          <ng-template #elseBlock>
+            <a [href]="item.url">
+              <span class="text-color">{{ item.label }}</span>
+            </a>
+          </ng-template>
+        </ng-template>
+      </p-breadcrumb>
+    </div>
+
+    <!-- wishlist grid -->
+    <div
+      *ngIf="products.length == 0"
+      class="flex flex-col items-center justify-center mt-28 teachers-regular text-3xl"
+    >
+      <h2>No Wishlist Items Found</h2>
+      <a routerLink="/home">
+        <p-button
+          styleClass="rounded-sm w-full border-black py-3 px-10 font-light text-sm my-8  bg-black text-white"
+          label="Continue Shopping"
+        ></p-button>
+      </a>
+    </div>
+  </div>
+</section>

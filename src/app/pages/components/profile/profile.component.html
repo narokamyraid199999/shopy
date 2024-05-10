@@ -1,0 +1,77 @@
+<section>
+  <div class="container mx-auto px-[5%] mt-28">
+    <div class="grid grid-cols-3 gap-y-8 gap-x-20">
+      <!-- first part -->
+      <div class="col-span-3 lg:col-span-1">
+        <div class="flex flex-col shadow-xl rounded-sm">
+          <a
+            class="py-4 px-8 transition-all duration-200 capitalize"
+            routerLinkActive="text-blue-600 bg-sky-50"
+            routerLink="dashboard"
+          >
+            <div class="flex items-center gap-x-3">
+              <i class="pi pi-user"></i>
+              <p>profile</p>
+            </div>
+          </a>
+          <a
+            class="py-4 px-8 transition-all duration-200 capitalize"
+            routerLinkActive="text-blue-600 bg-sky-50"
+            routerLink="info"
+          >
+            <div class="flex items-center gap-x-3">
+              <i class="pi pi-info-circle"></i>
+              <p class="capitalize">information</p>
+            </div>
+          </a>
+          <a
+            class="py-4 px-8 transition-all duration-200 capitalize"
+            routerLinkActive="text-blue-600 bg-sky-50"
+            routerLink="address"
+          >
+            <div class="flex items-center gap-x-3">
+              <i class="pi pi-address-book"></i>
+              <p class="capitalize">address</p>
+            </div>
+          </a>
+          <a
+            class="py-4 px-8 transition-all duration-200 capitalize"
+            routerLinkActive="text-blue-600 bg-sky-50"
+            routerLink="orders"
+          >
+            <div class="flex items-center gap-x-3">
+              <i class="pi pi-box"></i>
+              <p class="capitalize">my orders</p>
+            </div>
+          </a>
+          <a
+            class="py-4 px-8 transition-all duration-200 capitalize"
+            routerLinkActive="text-blue-600 bg-sky-50"
+            routerLink="notification"
+          >
+            <div class="flex items-center gap-x-3">
+              <i class="pi pi-bell"></i>
+              <p class="capitalize">Notification</p>
+            </div>
+          </a>
+          <a
+            class="py-4 px-8 transition-all duration-200 capitalize"
+            routerLinkActive="text-blue-600 bg-sky-50"
+            routerLink="password"
+          >
+            <div class="flex items-center gap-x-3">
+              <i class="pi pi-lock"></i>
+              <p class="capitalize">password</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- routing -->
+      <section class="col-span-3 lg:col-span-2 shadow-xl rounded-sm p-8">
+        <router-outlet></router-outlet>
+      </section>
+    </div>
+    <!-- menui -->
+  </div>
+</section>

@@ -1,0 +1,28 @@
+.product-root:hover .card {
+  transition: all 0.5s;
+  transform: scale(1.1);
+}
+.product-root:hover {
+  transform: scale(1.02);
+  transition: all 0.5s;
+  cursor: pointer;
+  box-shadow: inset 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.product-root .menui {
+  transition: all 0.5s;
+  transform: translateX(2rem);
+  opacity: 0;
+}
+
+.product-root:hover .menui {
+  transform: translateX(0px);
+  opacity: 100;
+}
+
+.cart-button .cart-icon {
+  transition: all 0.5s;
+  opacity: 0;
+}
+.cart-button:hover .cart-icon {
+  opacity: 100;
+}

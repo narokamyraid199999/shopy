@@ -1,0 +1,56 @@
+<!-- dashboard start -->
+<div>
+  <!-- dashboard profile icon -->
+  <div>
+    <!-- profile start -->
+    <div
+      class="flex flex-col gap-x-8 md:flex-row md:items-start gap-y-4 justify-between items-center"
+    >
+      <!-- first part -->
+      <div class="flex items-center gap-x-3">
+        <div class="w-20">
+          <img
+            class="rounded-full"
+            src="https://shofy-angular.vercel.app/assets/img/users/user-10.jpg"
+            alt="profile image"
+          />
+        </div>
+
+        <div>
+          <p class="text-3xl teachers-regular">Welcome Mr. Admin!</p>
+          <span class="text-sm font-light"
+            >You have
+            <span class="text-blue-500 font-bold">08</span> notifications</span
+          >
+        </div>
+      </div>
+
+      <!-- log -->
+      <div>
+        <a routerLink="/pages/auth">
+          <button
+            class="border-y-2 border-x-2 transition-all duration-300 border-gray-200 hover:bg-blue-500 hover:text-white py-2 px-5 text-sm"
+          >
+            Logout
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- info part -->
+    <div class="grid grid-cols-4 gap-x-4 gap-y-5 mt-28">
+      <div
+        class="col-span-4 md:col-span-2 lg:col-span-1 flex flex-col border-y-2 border-x-2 border-gray-100 py-8 items-center gap-y-3 justify-center"
+        *ngFor="let info of information"
+      >
+        <div class="relative">
+          <div class="absolute right-0">
+            <p-badge [value]="'' + info.padge"></p-badge>
+          </div>
+          <i [class]="info.icon + ' text-6xl'"></i>
+        </div>
+        <p class="teachers-regular text-xl">{{ info.title }}</p>
+      </div>
+    </div>
+  </div>
+</div>

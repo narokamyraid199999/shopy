@@ -1,0 +1,59 @@
+<section>
+  <div class="container mx-auto px-[5%] mt-28">
+    <h2 class="text-5xl font-medium">Grab Best Offer</h2>
+    <!-- path start -->
+    <div class="mt-3 inline-block">
+      <p-breadcrumb class="max-w-full" [model]="items">
+        <ng-template pTemplate="item" let-item>
+          <ng-container *ngIf="item.route; else elseBlock">
+            <a [routerLink]="item.route" class="p-menuitem-link">
+              <span
+                [ngClass]="[item.icon ? item.icon : '', 'text-color']"
+              ></span>
+              <span class="text-primary font-semibold">{{ item.label }}</span>
+            </a>
+          </ng-container>
+          <ng-template #elseBlock>
+            <a [href]="item.url">
+              <span class="text-color">{{ item.label }}</span>
+            </a>
+          </ng-template>
+        </ng-template>
+      </p-breadcrumb>
+    </div>
+
+    <!-- coupon part -->
+    <div class="grid grid-cols-2 gap-6 mt-16">
+      <div
+        *ngFor="let offer of gifts"
+        class="col-span-2 shadow-sm gap-y-8 shadow-gray-100 xl:col-span-1 grid grid-cols-3 p-6 border-t-2 border-x-2 border-gray-100"
+      >
+        <div class="col-span-3 md:col-span-2 flex gap-x-4 items-start">
+          <div class="w-[7rem] bg-gray-100 hover:cursor-pointer">
+            <img [src]="offer.img" alt="gift" />
+          </div>
+          <div class="mt-2">
+            <p class="font-medium text-lg">{{ offer.title }}</p>
+            <p>
+              <span class="font-md text-2xl mr-2 text-red-500"
+                >{{ offer.discount }}%</span
+              >
+              <span class="font-bold text-lg">Off</span>
+            </p>
+            <p class="mt-3 text-sm">DAYS 0 | HRS 0 | MIN 0 | SEC 0</p>
+          </div>
+        </div>
+        <div class="col-span-3 md:col-span-1 border-l-2 border-gray-100 pl-6">
+          <p class="text-sm">
+            Coupon <span class="text-red-400 font-medium">Inactive</span>
+          </p>
+          <div
+            class="border-dotted border-y-4 border-x-4 cursor-pointer font-medium mt-4 py-2 px-7 border-green-500 bg-green-50"
+          >
+            {{ offer.code }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

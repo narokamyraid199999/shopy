@@ -1,0 +1,6 @@
+.background {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
+    url("src\\assets\\blog.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

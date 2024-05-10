@@ -1,0 +1,19 @@
+<div class="container mx-auto mt-20 px-[6%]">
+  <div class="grid grid-cols-5 gap-y-5 gap-x-4">
+    <div
+      class="relative card col-span-5 md:col-span-2 lg:col-span-1"
+      *ngFor="let img of imgs"
+    >
+      <a href="https://www.instagram.com" target="_blank">
+        <div class="w-full cover h-full absolute bg-slate-600"></div>
+      </a>
+      <a href="https://www.instagram.com" target="_blank">
+        <i
+          class="fa-brands instagram absolute bottom-1/2 right-1/2 z-10 text-white text-5xl border-white fa-instagram"
+        ></i>
+      </a>
+
+      <img class="rounded-lg h-[17rem]" [src]="img" alt="instagram" />
+    </div>
+  </div>
+</div>

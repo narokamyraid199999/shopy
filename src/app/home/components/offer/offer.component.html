@@ -1,0 +1,53 @@
+<section>
+  <div class="container mt-16 mx-auto px-[6%]">
+    <div class="">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template *ngFor="let product of offerProducts" carouselSlide>
+          <div
+            class="grid text-white p-14 justify-between gap-y-6 lg:gay-y-0 grid-cols-2 bg-gradient-to-r rounded-md from-[#0989FF] to-blue-400 shadow-lg shadow-gray-200"
+          >
+            <!-- offer text -->
+            <div class="col-span-2 lg:col-span-1 mt-10 pl-4">
+              <p class="uppercase text-lg mb-1 font-medium text-gray-200">
+                table collection 2024
+              </p>
+              <div class="text-6xl font-bold">
+                <p class="mb-2">Galaxy Tab S6 Lite</p>
+                <p>Android Tablet</p>
+              </div>
+
+              <p class="mt-6 text-4xl font-bold">$288.00</p>
+              <a routerLink="/shop">
+                <button
+                  class="bg-black mt-10 text-white py-3 px-8 text-sm rounded-md font-bold hover:border-white hover:bg-white hover:text-black border-y-2 border-x-2 border-black transition-all duration-200"
+                >
+                  Shop now >
+                </button>
+              </a>
+            </div>
+
+            <!-- offer image -->
+            <div class="col-span-2 lg:col-span-1">
+              <!-- descound image -->
+              <div class="flex relative justify-end">
+                <div class="w-20 absolute -right-6">
+                  <img
+                    class="w-full"
+                    src="https://shofy-angular.vercel.app/assets/img/banner/banner-slider-offer.png"
+                    alt=""
+                  />
+                </div>
+
+                <div class="w-[25rem] h-[25rem]">
+                  <img class="w-full" [src]="product.img" alt="" />
+                </div>
+              </div>
+
+              <!-- main image -->
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>

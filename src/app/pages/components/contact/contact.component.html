@@ -1,0 +1,158 @@
+<section>
+  <div class="container mx-auto px-[5%] mt-28">
+    <h2 class="text-4xl font-medium text-center">Keep In Touch with Us</h2>
+    <!-- path start -->
+    <div class="mt-3 flex justify-center">
+      <p-breadcrumb class="max-w-full" [model]="items">
+        <ng-template pTemplate="item" let-item>
+          <ng-container *ngIf="item.route; else elseBlock">
+            <a [routerLink]="item.route" class="p-menuitem-link">
+              <span
+                [ngClass]="[item.icon ? item.icon : '', 'text-color']"
+              ></span>
+              <span class="text-primary font-semibold">{{ item.label }}</span>
+            </a>
+          </ng-container>
+          <ng-template #elseBlock>
+            <a [href]="item.url">
+              <span class="text-color">{{ item.label }}</span>
+            </a>
+          </ng-template>
+        </ng-template>
+      </p-breadcrumb>
+    </div>
+
+    <!-- coupon part -->
+    <div class="p-16 shadow-xl mt-16">
+      <!-- header -->
+      <h2 class="text-3xl font-medium">Sent A Message</h2>
+      <div class="grid grid-cols-3 gap-y-16 gap-x-28 mt-8">
+        <!-- form -->
+        <div class="col-span-3 lg:col-span-2">
+          <form [formGroup]="contactForm">
+            <!-- name -->
+            <span class="p-float-label">
+              <input
+                formControlName="name"
+                class="w-full h-14"
+                pInputText
+                type="text"
+                name="name"
+                id="name"
+              />
+              <label for="name">Your Name</label>
+            </span>
+
+            <!-- email -->
+            <span class="p-float-label mt-7">
+              <input
+                formControlName="email"
+                class="w-full h-14"
+                pInputText
+                type="text"
+                name="email"
+                id="email"
+              />
+              <label for="email">Your Email</label>
+            </span>
+
+            <!-- subject -->
+            <span class="p-float-label mt-7">
+              <input
+                formControlName="subject"
+                class="w-full h-14"
+                pInputText
+                type="text"
+                name="subject"
+                id="subject"
+              />
+              <label for="subject">subject</label>
+            </span>
+
+            <!-- subject -->
+            <span class="p-float-label mt-7">
+              <span class="text-sm font-light">Message</span>
+              <input
+                formControlName="message"
+                class="w-full h-36"
+                pInputText
+                type="text"
+                name="Message"
+                id="Message"
+              />
+            </span>
+
+            <!-- terms -->
+            <div class="flex items-center gap-x-3 mt-4 mb-6">
+              <p-checkbox
+                formControlName="terms"
+                value="accept"
+                inputId="terms"
+              />
+              <label for="ny" class="hover:cursor-pointer text-sm md:text-md"
+                >Save my name, email, and website in this browser for the next
+                time I comment</label
+              >
+            </div>
+            <p-button
+              styleClass="rounded-sm bg-black text-white text-sm border-black px-8"
+              label="Send Message"
+            ></p-button>
+          </form>
+        </div>
+        <!-- contact -->
+        <div class="col-span-3 lg:col-span-1">
+          <!-- message icon -->
+          <div class="mb-12">
+            <img
+              src="https://shofy-angular.vercel.app/assets/img/contact/contact-icon-1.png"
+              alt="contact"
+            />
+            <div class="my-4">
+              <span>contact@shofy.com</span>
+              <p class="font-bold text-lg">+670 413 90 762</p>
+            </div>
+          </div>
+
+          <!-- location -->
+          <div class="mb-12">
+            <img
+              src="https://shofy-angular.vercel.app/assets/img/contact/contact-icon-2.png"
+              alt="location"
+            />
+            <div class="my-4">
+              <span>84 sleepy hollow st.</span>
+              <p>jamaica, New York 1432</p>
+            </div>
+          </div>
+
+          <!-- social -->
+          <div>
+            <img
+              src="https://shofy-angular.vercel.app/assets/img/contact/contact-icon-3.png"
+              alt="contact"
+            />
+            <p class="mt-4">Find on social media</p>
+            <div class="flex items-center gap-x-2 mt-3">
+              <div
+                class="bg-white shadow-md hover:bg-blue-400 transition-all duration-200 hover:cursor-pointer flex justify-center py-2 w-12"
+              >
+                <i class="fa-brands hover:text-white fa-facebook"></i>
+              </div>
+              <div
+                class="bg-white shadow-md hover:bg-blue-400 transition-all duration-200 hover:cursor-pointer flex justify-center py-2 w-12"
+              >
+                <i class="fa-brands fa-twitter"></i>
+              </div>
+              <div
+                class="bg-white shadow-md hover:bg-blue-400 transition-all duration-200 hover:cursor-pointer flex justify-center py-2 w-12"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

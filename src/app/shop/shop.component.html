@@ -1,0 +1,12 @@
+<!-- shop section -->
+<section>
+  <!-- shop container -->
+  <div class="container mx-auto mt-20 px-[5%]">
+    <p-button
+      styleClass="text-sm bg-transparent text-black border-black mb-8"
+      label="weekends"
+      (onClick)="toggleWeekends()"
+    ></p-button>
+    <full-calendar [options]="calendarOptions"></full-calendar>
+  </div>
+</section>

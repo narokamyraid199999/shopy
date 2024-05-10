@@ -1,0 +1,27 @@
+<div>
+  <!-- header -->
+  <h2 class="teachers-regular text-2xl">My activity settings</h2>
+  <p class="text-sm mt-4 mb-6">
+    Stay up to date with notification on activity that involves you including
+    mentions, messages, replies to your bids, new items, sale and administrative
+    updates
+  </p>
+
+  <!-- switch -->
+  <div>
+    <div class="flex gap-x-3">
+      <p-inputSwitch [(ngModel)]="Like" />
+      <p>Like & Follows Notifications</p>
+    </div>
+    <!-- post -->
+    <div class="flex gap-x-3 my-3">
+      <p-inputSwitch [(ngModel)]="Post" />
+      <p>Post, Comments & Replies Notifications</p>
+    </div>
+    <!-- news -->
+    <div class="flex gap-x-3">
+      <p-inputSwitch [(ngModel)]="News" />
+      <p>New Product Notifications</p>
+    </div>
+  </div>
+</div>

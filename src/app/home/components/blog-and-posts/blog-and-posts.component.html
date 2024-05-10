@@ -1,0 +1,60 @@
+<section class="mt-20 pb-2 pt-14">
+  <div class="container mx-auto px-[6%]">
+    <!-- head start -->
+    <div class="flex gap-x-4 items-center justify-between">
+      <div class="relative z-1">
+        <p class="font-bold sm:text-sm md:text-lg lg:text-xl xl:text-4xl">
+          Latest news & articles
+        </p>
+        <img
+          class="w-16 top-4 z-10 absolute"
+          src="https://static.vecteezy.com/system/resources/previews/021/999/192/original/hand-drawn-curved-line-shape-curved-line-icon-free-png.png"
+          alt=""
+        />
+      </div>
+      <!-- hr start -->
+      <hr class="h-1 w-1/2 bg-white" />
+      <!-- filter start -->
+      <div class="hidden lg:block">
+        <a routerLink="/shop">
+          <p-button
+            styleClass="bg-black border-black hover:text-white"
+            icon="pi pi-arrow-right"
+            label="View All Blogs"
+          ></p-button>
+        </a>
+      </div>
+    </div>
+
+    <!-- product card start -->
+    <div class="mt-12">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template *ngFor="let product of trendyProducts" carouselSlide>
+          <div>
+            <div class="relative">
+              <span
+                class="absolute bg-black px-5 py-2 font-medium text-white text-sm"
+                >20 January, 2023</span
+              >
+              <img
+                class="hover:cursor-pointer shadow-sm rounded-md"
+                [src]="product.img"
+                alt=""
+              />
+            </div>
+            <div>
+              <p class="mt-4 text-xl font-medium">{{ product.title }}</p>
+              <p class="text-sm mt-4 mb-5">{{ product.desc }}</p>
+              <a routerLink="/blog">
+                <p-button
+                  styleClass="bg-transparent text-blue-500 border-blue-500 text-sm px-8 py-2"
+                  label="Read Now"
+                ></p-button>
+              </a>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
