@@ -17,7 +17,7 @@ import { HomeSliderComponent } from './components/home-slider/home-slider.compon
 export class HomeComponent implements OnInit {
   constructor(private _SideBarService: SideBarService) {}
 
-  title: string = 'programmer';
+  title: string = 'programmer never die';
 
   ngOnInit(): void {
     this.updateState();
