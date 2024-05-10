@@ -44,6 +44,10 @@ export class ProductCardComponent {
     this._Router.navigate(['/shop/productDetails', this.product?.id]);
   }
 
+  openProductDialog() {
+    console.log('open dialog');
+  }
+
   addToCart(prod: productDetails | undefined) {
     this._cartService.updateLocalStorage(prod);
     this._messageService.add({

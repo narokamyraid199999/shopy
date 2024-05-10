@@ -153,12 +153,17 @@
     <!-- cart empty -->
     <div
       *ngIf="products.length == 0"
-      class="flex flex-col items-center justify-center mt-28 teachers-regular text-3xl"
+      class="flex flex-col items-center justify-center mt-16 teachers-regular text-3xl"
     >
-      <h2>No Cart Items Found</h2>
+      <img
+        class="select-none"
+        src="https://shofy-angular.vercel.app/assets/img/product/cartmini/empty-cart.png"
+        alt=""
+      />
+      <h2 class="mt-6">No Cart Items Found</h2>
       <a routerLink="/home">
         <p-button
-          styleClass="rounded-sm w-full border-black py-3 px-10 font-light text-sm my-8  bg-black text-white"
+          styleClass="rounded-sm text-black   border-black py-3 px-6 font-light text-sm mt-8  bg-transparent text-black"
           label="Continue Shopping"
         ></p-button>
       </a>

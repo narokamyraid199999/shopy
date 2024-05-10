@@ -21,11 +21,13 @@
             class="bg-black cart-icon text-white rounded-lg font-medium p-1 text-sm"
             >Quick View</span
           >
-          <button
-            class="py-2 px-3 bg-white shadow-gray-300 shadow-md hover:cursor-pointer transition-all duration-300 hover:bg-blue-500 hover:text-white"
-          >
-            <i class="fa-solid text-lg fa-eye"></i>
-          </button>
+          <a (click)="openProductDialog()">
+            <button
+              class="py-2 px-3 bg-white shadow-gray-300 shadow-md hover:cursor-pointer transition-all duration-300 hover:bg-blue-500 hover:text-white"
+            >
+              <i class="fa-solid text-lg fa-eye"></i>
+            </button>
+          </a>
         </div>
         <!-- add to wishlist -->
         <div class="flex cart-button items-center gap-x-1">

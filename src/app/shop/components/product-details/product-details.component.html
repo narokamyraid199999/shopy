@@ -1,1 +1,64 @@
-<p>product-details works!</p>
+<!-- shop section -->
+<section>
+  <!-- shop container -->
+  <div class="container mx-auto mt-10 px-[5%]">
+    <div *ngIf="product">
+      <app-path></app-path>
+
+      <!-- product container -->
+      <div class="grid grid-cols-2 gap-x-10 mt-3">
+        <!-- product section -->
+        <div class="flex gap-x-2">
+          <!-- other image -->
+          <div class="flex gap-y-4 flex-col">
+            <a *ngFor="let img of product.img" (click)="changeMainImage(img)">
+              <img
+                [ngClass]="{
+                  'border-gray-400': img == mainImg,
+                  'border-y-2': img == mainImg,
+                  'border-x-2': img == mainImg
+                }"
+                class="w-[7rem] bg-gray-50 shadow-sm transition-all duration-100 hover:cursor-pointer hover:border-x-2 hover:border-y-2 hover:border-gray-400"
+                [src]="img"
+                alt=""
+              />
+            </a>
+          </div>
+          <!-- main image -->
+          <div class="bg-gray-50">
+            <img [src]="mainImg" alt="" />
+          </div>
+        </div>
+
+        <!-- description section -->
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque omnis
+          animi itaque molestiae saepe repellat beatae, dolores odio nulla
+          quisquam eos illo maiores soluta delectus ducimus, iste suscipit quam
+          nesciunt.
+        </div>
+      </div>
+    </div>
+    <!-- no product -->
+    <div class="mt-28" *ngIf="!product">
+      <div class="flex flex-col items-center justify-center gap-y-6">
+        <img
+          src="https://shofy-angular.vercel.app/assets/img/product/cartmini/empty-cart.png"
+          alt=""
+        />
+        <!-- no product text -->
+        <div>
+          <h2 class="teachers-regular text-center text-4xl">
+            Product Items Not Found
+          </h2>
+          <a class="flex justify-center" routerLink="/home">
+            <p-button
+              styleClass="rounded-sm text-black   border-black py-3 px-6 font-light text-sm mt-8  bg-transparent text-black"
+              label="Go To Home"
+            ></p-button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
