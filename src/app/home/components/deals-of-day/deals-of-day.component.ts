@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { productDetails } from 'src/app/shared/core/interfaces/product-details';
 
@@ -7,7 +7,19 @@ import { productDetails } from 'src/app/shared/core/interfaces/product-details';
   templateUrl: './deals-of-day.component.html',
   styleUrls: ['./deals-of-day.component.css'],
 })
-export class DealsOfDayComponent {
+export class DealsOfDayComponent implements OnInit {
+  ngOnInit(): void {
+    this.updateId();
+  }
+
+  updateId() {
+    for (let i = 0; i < this.DealsProducts.length; i++) {
+      this.DealsProducts[i].id = i + 13;
+    }
+    console.log('Deals products');
+    this.DealsProducts.forEach((prod) => console.log(prod));
+  }
+
   DealsProducts: productDetails[] = [
     {
       img: 'https://i.ibb.co/WVdTgR8/headphone-1.png',
@@ -44,6 +56,7 @@ export class DealsOfDayComponent {
       price: 288.0,
     },
   ];
+
   customOptions: OwlOptions = {
     loop: true,
     autoplay: true,

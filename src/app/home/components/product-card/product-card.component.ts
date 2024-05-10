@@ -41,7 +41,7 @@ export class ProductCardComponent {
   raiting: number = 3;
 
   goToDetails() {
-    this._Router.navigate(['/shop/productDetails', this.product?.title]);
+    this._Router.navigate(['/shop/productDetails', this.product?.id]);
   }
 
   addToCart(prod: productDetails | undefined) {

@@ -49,6 +49,11 @@ export class WishlistComponent implements OnInit {
 
   products: productDetails[] = [];
 
+  deleteProduct(product: productDetails) {
+    this._wishlistService.deleteFood(product);
+    this.getAllProducts();
+  }
+
   clearCart() {
     this._wishlistService.clearCart();
   }

@@ -47,6 +47,11 @@ export class CartComponent implements OnInit {
     }
   }
 
+  deleteProduct(product: productDetails) {
+    this._cartService.deleteFood(product);
+    this.getAllProducts();
+  }
+
   products: productDetails[] = [];
 
   clearCart() {

@@ -37,12 +37,14 @@
                 <p class="pl-4">{{ product.quantity }}</p>
               </td>
               <td>
-                <div
-                  class="flex gap-x-1 items-center hover:cursor-pointer transition-all duration-200 hover:text-red-500"
-                >
-                  <i class="fa-solid fa-xmark"></i>
-                  <span>Remove</span>
-                </div>
+                <a (click)="deleteProduct(product)">
+                  <div
+                    class="flex gap-x-1 items-center hover:cursor-pointer transition-all duration-200 hover:text-red-500"
+                  >
+                    <i class="fa-solid fa-xmark"></i>
+                    <span>Remove</span>
+                  </div>
+                </a>
               </td>
             </tr>
           </ng-template>

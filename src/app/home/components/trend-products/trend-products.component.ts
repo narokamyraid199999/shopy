@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { productDetails } from 'src/app/shared/core/interfaces/product-details';
 
 @Component({
@@ -6,7 +6,18 @@ import { productDetails } from 'src/app/shared/core/interfaces/product-details';
   templateUrl: './trend-products.component.html',
   styleUrls: ['./trend-products.component.css'],
 })
-export class TrendProductsComponent {
+export class TrendProductsComponent implements OnInit {
+  ngOnInit(): void {
+    this.updateId();
+  }
+
+  updateId() {
+    for (let i = 0; i < this.trendyProducts.length; i++) {
+      this.trendyProducts[i].id = i + 1;
+    }
+    this.trendyProducts.forEach((prod) => console.log(prod));
+  }
+
   trendyProducts: productDetails[] = [
     {
       img: 'https://i.ibb.co/WVdTgR8/headphone-1.png',
