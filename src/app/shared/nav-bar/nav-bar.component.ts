@@ -4,6 +4,7 @@ import { MenuItem } from 'primeng/api';
 import { SideBarService } from 'src/app/home/core/services/side-bar.service';
 import { ProductService } from '../core/services/product.service';
 import { CartService } from '../core/services/cart.service';
+import { WishlistService } from '../core/services/wishlist.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,16 +16,21 @@ export class NavBarComponent implements OnInit {
     private _Router: Router,
     private _sideBar: SideBarService,
     private _productService: ProductService,
-    private _cartService: CartService
+    private _cartService: CartService,
+    private _wishlistService: WishlistService
   ) {}
 
   items: MenuItem[] | undefined;
 
-  padge: number = 2;
+  padge: number = 0;
+  wishlist: number = 0;
 
   getProductsNumber() {
     this._cartService.foodList.subscribe((data) => {
       this.padge = data.length;
+    });
+    this._wishlistService.favFoodsList.subscribe((data) => {
+      this.wishlist = data.length;
     });
   }
 
