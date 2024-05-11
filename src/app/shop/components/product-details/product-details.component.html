@@ -6,7 +6,9 @@
       <app-path></app-path>
 
       <!-- product container -->
-      <div class="grid grid-cols-2 gap-x-24 mt-3">
+      <div
+        class="grid grid-cols-1 gap-y-8 lg:gap-y-0 lg:grid-cols-2 gap-x-24 mt-3"
+      >
         <!-- product section -->
         <div class="flex gap-x-3">
           <!-- other image -->
@@ -69,7 +71,7 @@
           </div>
 
           <!-- add to cart -->
-          <div class="grid grid-cols-2 gap-x-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
             <p-button
               (onClick)="addToCart()"
               styleClass="rounded-sm w-full text-black   border-black py-3 px-6 font-light text-sm mt-8  bg-transparent text-black"
