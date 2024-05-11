@@ -18,6 +18,7 @@ import { ShopCattegoriesComponent } from './components/shop-cattegories/shop-cat
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { PathComponent } from '../shared/path/path.component';
 import { FilterPipe } from './core/pipes/filter.pipe';
+import { ProductCardComponent } from '../home/components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FilterPipe } from './core/pipes/filter.pipe';
     FormsModule,
     TableModule,
     PathComponent,
+    ProductCardComponent,
   ],
 })
 export class ShopModule {}

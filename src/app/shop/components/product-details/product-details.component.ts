@@ -36,8 +36,25 @@ export class ProductDetailsComponent implements OnInit {
         this.product
           ? (this.descLen = this.product.description.length)
           : undefined;
-
+        this.getSimillerProducts();
         console.log(this.product);
+      });
+    });
+  }
+
+  getSimillerProducts() {
+    this.simillerProducts = [];
+    this._productService.getAllProducts().subscribe((data) => {
+      data.forEach((prod) => {
+        if (
+          prod.category
+            .toLowerCase()
+            .includes(this.product?.category.toLowerCase()) &&
+          prod.id != this.product.id &&
+          !this.simillerProducts.includes(prod)
+        ) {
+          this.simillerProducts.push(prod);
+        }
       });
     });
   }
@@ -45,7 +62,8 @@ export class ProductDetailsComponent implements OnInit {
   shourClicked: boolean = false;
 
   id: number | undefined;
-  product: productDescription | undefined;
+  product: productDescription = {} as productDescription;
+  simillerProducts: productDescription[] = [];
 
   mainImg: string | undefined;
   descLen: number = 0;
