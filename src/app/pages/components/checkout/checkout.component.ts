@@ -43,9 +43,11 @@ export class CheckoutComponent implements OnInit {
   getAllProducts() {
     this.totalPrice = 0;
     this._cartService.foodList.subscribe((data) => {
-      this.products = data;
-      console.log('cart data', this.products);
-      this.getTotalPrice();
+      if (data) {
+        this.products = data;
+        console.log('cart data', this.products);
+        this.getTotalPrice();
+      }
     });
   }
 

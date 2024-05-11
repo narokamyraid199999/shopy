@@ -29,9 +29,11 @@ export class WishlistComponent implements OnInit {
   getAllProducts() {
     this.totalPrice = 0;
     this._wishlistService.favFoodsList.subscribe((data) => {
-      this.products = data;
-      console.log('cart data', this.products);
-      this.getTotalPrice();
+      if (data) {
+        this.products = data;
+        console.log('cart data', this.products);
+        this.getTotalPrice();
+      }
     });
   }
 
